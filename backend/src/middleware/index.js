@@ -1,4 +1,4 @@
 const authenticate = require('./authenticate');
-module.exports{
+module.exports={
     authenticate
 }

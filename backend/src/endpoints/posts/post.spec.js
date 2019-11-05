@@ -61,9 +61,8 @@ describe("endpoinst", () => {
         post: jest.fn().mockResolvedValue({ data: { id: 1000 } })
       };
       await postHandlers({ axios }).post(req, res);
-      // expect(axios.post.mock.calls).toEqual([]);
-      console.log(res.sendStatus.mock.calls);
-      expect(res.sendStatus.mock.calls).toEqual([[500]]);
+      expect(axios.post.mock.calls).toEqual([]);
+      expect(res.sendStatus.mock.calls).toEqual([[400]]);
     });
   });
 });
