@@ -23,6 +23,16 @@ describe("server", () => {
           .set("Content-type", "application/json");
         expect(response.status).toEqual(201);
         expect(response.body.userId).toEqual(5);
+        expect(response.body).toHaveProperty('id');
+      });
+
+      it("should create new post", async () => {
+        const response = await request(server)
+          .post("/")
+          .send({ userId: 1000 })
+          .set("user_id", "1")
+          .set("Content-type", "application/json");
+        expect(response.status).toEqual(400);
       });
     });
   });
