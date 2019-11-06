@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "scripts": {
-    "test": "jest --detectOpenHandles --forceExit ",
-    "watch": " nodemon src/server.js",
+    "test": "jest --detectOpenHandles --forceExit  ",
+    "watch": " nodemon  src/server.js ",
     "docker": "yarn install",
     "docker:run": "yarn docker && yarn watch",
     "docker:test": "yarn docker && yarn test --watchAll "
@@ -16,6 +22,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
